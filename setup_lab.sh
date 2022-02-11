@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Purpose:
+#   This script is used to setup the lab environment.
+#
+# Author:
+#   Cristian Rincón <github.com/cristian-rincon>
+#
+# Version:
+#   0.1
+#
 
 # Function to update the system
 function update_system() {
@@ -76,4 +86,20 @@ function install_tmux() {
     fi
 }
 
+
+# Function to run the setup
+function run_setup() {
+    echo "Running setup..."
+    update_system
+    install_zsh
+    install_git
+    install_curl
+    install_oh_my_zsh
+    install_oh_my_zsh_plugins
+    install_neovim
+    install_tmux
+    echo "All done!, please restart your terminal to apply the changes"
+}
+
+run_setup
 
