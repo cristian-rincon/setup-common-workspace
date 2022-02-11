@@ -47,10 +47,8 @@ function install_curl() {
 
 # Function to verify if oh-my-zsh is installed and if not, install it
 function install_oh_my_zsh() {
-    if [ -z "$(which zsh)" ]; then
-        echo "oh-my-zsh is not installed. Installing oh-my-zsh..."
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    fi
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 
@@ -70,6 +68,8 @@ function install_neovim() {
         apt install neovim -y
         echo "Installing nerd-fonts..."
         git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts && ~/nerd-fonts/install.sh
+        echo "Installing vim-plug..."
+        curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         echo "Installing neovim plugins..."
         git clone https://github.com/cristian-rincon/neovim-like-vscode.git ~/.config/nvim
         echo "Now you need to install the plugins by opening nvim and running :PlugInstall"
