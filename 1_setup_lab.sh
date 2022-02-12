@@ -24,8 +24,8 @@ function install_zsh() {
         echo "zsh is not installed. Installing zsh..."
         apt install zsh -y
     fi
-    $(pwd)/1_setup_zsh.sh
-    $(pwd)/2_setup_zsh_plugins.sh
+    $(pwd)/2_setup_zsh.sh
+    $(pwd)/3_setup_zsh_plugins.sh
 }
 
 
