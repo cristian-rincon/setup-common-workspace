@@ -23,9 +23,9 @@ function install_zsh() {
     if [ -z "$(which zsh)" ]; then
         echo "zsh is not installed. Installing zsh..."
         apt install zsh -y
-        $(pwd)/1_setup_zsh.sh
-        $(pwd)/2_setup_zsh_plugins.sh
     fi
+    $(pwd)/1_setup_zsh.sh
+    $(pwd)/2_setup_zsh_plugins.sh
 }
 
 
