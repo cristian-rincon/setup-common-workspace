@@ -80,8 +80,6 @@ function run_setup() {
     install_zsh
     install_git
     install_curl
-    install_oh_my_zsh
-    install_oh_my_zsh_plugins
     install_neovim
     install_tmux
     echo "All done!, please restart your terminal to apply the changes"
